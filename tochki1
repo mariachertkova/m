@@ -1,0 +1,20 @@
+#include <iostream>
+#include <locale.h>
+#include <math.h>
+using namespace std;
+int main (){
+	double x, y, a, b;
+	setlocale(LC_ALL, "Russian");
+	cout<<"Введите x, y, a, b \n";
+	cin>>x>>y>>a>>b;
+	x=abs(x);
+	y=abs(y);
+	a=abs(a);
+	b=abs(b);
+	if (y>=(-b/a)*x+b)
+		cout<<"Не попадет"<<endl;
+	else 
+		cout<<"Попадет"<<endl;
+	system ("pause");
+	return 0;
+}
