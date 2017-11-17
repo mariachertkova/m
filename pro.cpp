@@ -9,23 +9,22 @@ int main()
     double b;
     double c;
     double x;
-	setlocale(LC_ALL, "Russian");
-    cout << "Введите значение a: ";
+    cout << "Enter a: ";
     cin >> a;
-    cout << "Введите значение b: ";
+    cout << "Enter b: ";
     cin >> b;
-    cout << "Введите значение c: ";
+    cout << "Enter c: ";
     cin >> c;
-    if((b*b - 4*a*c) >= 0) //Если дискриминант больше или равен 0
+    if((b*b - 4*a*c) >= 0) //The discriminant is greater than or equal to 0
     {
         x = ( -1*b + sqrt(b*b - 4*a*c) ) / (2 * a);
-        cout << "Первый корень равен " << x << endl;
+        cout << "First root= " << x << endl;
         x = ( -1*b - sqrt(b*b - 4*a*c) ) / (2 * a);
-        cout << "Второй корень равен " << x << endl;
+        cout << "Second root= " << x << endl;
     }
     else
     {
-        cout << "Дискриминант меньше 0, корни невещественные." << endl;
+        cout << "The discriminant is less than zero, there are no roots" << endl;
     }
 	system ("pause");
     return 0;
