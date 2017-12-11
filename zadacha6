@@ -8,9 +8,9 @@ int main(void){
 	for (int i=2; i<11; i++){
 		sum+=i;
 		res*=sum;
-		cout<<res<<(i<10?"*" : "");
+		cout<<res<<endl;
 	}
-	cout<<"="<<res<<endl;
+	cout<<"(1+2)*(1+2+3)*...*(1+2+...+10)"<<"="<<res<<endl;
 	system("pause");
 	return 0;
 }
