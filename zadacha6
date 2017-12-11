@@ -1,0 +1,16 @@
+#include<iostream>
+#include<math.h>
+#include<locale.h>
+#include<cmath>
+using namespace std;
+int main(void){
+	long long sum=1, res=1;
+	for (int i=2; i<11; i++){
+		sum+=i;
+		res*=sum;
+		cout<<res<<(i<10?"*" : "");
+	}
+	cout<<"="<<res<<endl;
+	system("pause");
+	return 0;
+}
