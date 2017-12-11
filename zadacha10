@@ -1,0 +1,18 @@
+#include <iostream>
+#include <stdarg.h>
+#include <locale.h>
+using namespace std;
+int main (void){
+setlocale (LC_ALL, "Russian");
+int a;//Кол-во минут пользователя
+int x=1;//Кол-во бактерий
+int time=0;
+cin>>a;
+while (time<a){
+++time;
+x*=2;
+}
+cout<<x<<endl;
+system ("pause");
+return 0;
+}
