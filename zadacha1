@@ -1,0 +1,20 @@
+#include <iostream>
+#include<locale.h>
+
+ using namespace std;
+
+int main (void){
+	setlocale(LC_ALL, "Russian");
+	int N; //Делимое
+	int a; // Делитель
+	cout << "Введите число: ";
+	cin >> N;
+	a=N;
+	while (a>0){
+		if ( N%a == 0)
+			cout << a << " ";
+		a--;
+	}
+	system("pause");
+ 	return (0);
+}
