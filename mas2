@@ -1,0 +1,26 @@
+#include <locale.h>
+#include <ctime>
+#include <iostream>
+using namespace std;
+int main(void)
+{
+const int N=3;
+int k=0;
+int A[N*N];
+int B[N][N];
+int min=0,max=30;
+for(int k=0; k<N*N; k++){
+A[k]=min+rand()%(max-min+1);
+cout<<A[k]<<" ";
+}
+cout<<endl;
+for(int i=0; i<N; i++){
+for ( int j=0; j<N; j++){
+B[i][j]=A[k++];
+cout<<B[i][j]<<'\t';
+}
+cout<<endl;
+}
+system("pause");
+return 0;
+}
