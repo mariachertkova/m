@@ -15,5 +15,5 @@ int main(){
     }
     cout<<"min = "<<min<<"\n";
     system("pause");
-	  return 0;
+    return 0;
 }
