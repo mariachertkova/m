@@ -1,0 +1,19 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+//Написать программу, создающую массив из 10 случайных целых чисел из отрезка [-50;50].
+//Вывести на экран весь массив и на отдельной строке — значение минимального элемента массива. 
+
+int main(){
+    const int N=10;
+    int A[N];
+    int min=50;
+    for(int i=0,*p=A;i<N;i++,p++){
+        cout<<(*p=(rand()%101-50))<<" "<<'\n';
+        if(*p<min) min=*p;
+    }
+    cout<<"min = "<<min<<"\n";
+    system("pause");
+	  return 0;
+}
