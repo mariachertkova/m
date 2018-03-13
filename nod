@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int getNOD (int a, int b) {
+ while (a!=b){
+	 if(a<b)
+		 b=b-a;
+	 else
+		 a=a-b;
+ }
+ return a;
+}
+
+int ArrayNOD(int* A, int n){
+	int m;
+	m=A[0];
+	for(int i=1; i<n; i++){
+		m=getNOD(m, A[i]);
+		if(getNOD(m, A[i])==1)
+			break;
+	}
+
+	return m;
+}
+
+int main(void){
+	setlocale(LC_ALL, "Russian");
+
+	int n=10;
+	int*A =new int[n];
+	cout<<"Введите кол-во чисел, от которых вы хотите найти НОД"<<endl;
+	cin>>n;
+	cout<<"Введите эти числа"<<endl;
+	for(int i=0; i<n; i++){
+		cin>>A[i];
+	}
+	cout<<"НОД="<<ArrayNOD(A, n)<<endl;
+	system("pause");
+	return 0;
+}
