@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+long long pow(int a, int n){
+	if(n==0)
+		return 1;
+	if(n%2 == 0)
+		return pow(a, n/2)*pow(a, n/2);
+	else 
+		return a*pow(a,n-1);
+}
+
+int main(){
+	setlocale(LC_ALL, "Russian");
+	int n, a;
+	cout<<"Введите число, которое хотите возвести в степень"<<'\n';
+	cin>>a;
+	cout<<"Введите показатель степени"<<'\n';
+	cin>>n;
+	cout<<pow(a, n)<<'\n';
+	system("pause");
+	return 0;
+}
