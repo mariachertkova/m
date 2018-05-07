@@ -6,14 +6,17 @@ using namespace std;
 void qsort (int *arr, int b, int e);
 
 int main(){
+	setlocale (LC_ALL, "Russian");
 	const int N=20;
 	int arr[N];
 	int min=1, max=100;
+	cout<<"Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: ";
 	for(int i=0; i<N; i++){
 		arr[i]=min+rand()%(max-min+1);
 	    cout<<arr[i]<<" ";
 	}
 	cout<<endl;
+	cout<<"ÐžÑ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: ";
 	qsort(arr, 0, N-1);
 	for(int i=0;i<20;i++)
         cout<<arr[i]<< " ";
@@ -23,7 +26,7 @@ int main(){
 
 void qsort (int *arr,int b, int e){
   int l = b, r = e;
-  int piv = arr[(l + r) / 2]; // Îïîðíûì ýëåìåíòîì äëÿ ïðèìåðà âîçüì¸ì ñðåäíèé
+  int piv = arr[(l + r) / 2]; // ÃŽÃ¯Ã®Ã°Ã­Ã»Ã¬ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¬ Ã¤Ã«Ã¿ Ã¯Ã°Ã¨Ã¬Ã¥Ã°Ã  Ã¢Ã®Ã§Ã¼Ã¬Â¸Ã¬ Ã±Ã°Ã¥Ã¤Ã­Ã¨Ã©
   while (l <= r){
     while (arr[l] < piv)
       l++;
