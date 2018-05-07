@@ -1,4 +1,4 @@
-//Сортировка по убыванию
+//РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ СѓР±С‹РІР°РЅРёСЋ
 
 #include <iostream>
 
@@ -11,15 +11,15 @@ int main(){
 	const int N=20;
 	int arr[N];
 	int min=1, max=100;
-	cout<<"Исходный массив: ";
+	cout<<"РСЃС…РѕРґРЅС‹Р№ РјР°СЃСЃРёРІ: ";
 	for(int i=0; i<N; i++){
 		arr[i]=min+rand()%(max-min+1);
-	    cout<<arr[i]<<" ";
+		cout<<arr[i]<<" ";
 	}
 	cout<<endl;
-	cout<<"Отсортированный массив: ";
-    qsort(arr, 0, N-1);
-    for(int i=0;i<N;i++)
+	cout<<"РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РјР°СЃСЃРёРІ: ";
+	qsort(arr, 0, N-1);
+	for(int i=0;i<N;i++)
 		cout<<arr[i]<< " ";
 	system("pause");
 	return 0;
@@ -33,9 +33,9 @@ void qsort (int *arr,int b, int e){
     	while (arr[l] > piv)
 		l++;
 	while (arr[r] < piv)
-      		r--;
+		r--;
     	if (l <= r)
-      		swap (arr[l++], arr[r--]);
+		swap (arr[l++], arr[r--]);
 	}
 	if (b < r)
 		qsort (arr, b, r);
