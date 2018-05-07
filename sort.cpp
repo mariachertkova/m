@@ -13,7 +13,7 @@ int main(){
 	cout<<"Исходный массив: ";
 	for(int i=0; i<N; i++){
 		arr[i]=min+rand()%(max-min+1);
-	    cout<<arr[i]<<" ";
+		cout<<arr[i]<<" ";
 	}
 	cout<<endl;
 	cout<<"Отсортированный массив: ";
@@ -25,19 +25,19 @@ int main(){
 }
 
 void qsort (int *arr,int b, int e){
-  int l = b, r = e;
-  int piv = arr[(l + r) / 2]; // Îïîðíûì ýëåìåíòîì äëÿ ïðèìåðà âîçüì¸ì ñðåäíèé
-  while (l <= r){
-    while (arr[l] < piv)
-      l++;
-    while (arr[r] > piv)
-      r--;
-    if (l <= r)
-      swap (arr[l++], arr[r--]);
-  }
-  if (b < r)
-    qsort (arr, b, r);
-  if (e > l)
-    qsort (arr, l, e);
+	int l = b, r = e;
+	int piv = arr[(l + r) / 2];
+  	while (l <= r){
+    	while (arr[l] < piv)
+		l++;
+	while (arr[r] > piv)
+      		r--;
+    	if (l <= r)
+      		swap (arr[l++], arr[r--]);
+	}
+	if (b < r)
+		qsort (arr, b, r);
+	if (e > l)
+		qsort (arr, l, e);
 } 
 
