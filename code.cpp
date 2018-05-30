@@ -5,7 +5,7 @@
 
 using namespace std;
 
-//Шифр на базе XOR
+//РЁРёС„СЂ РЅР° Р±Р°Р·Рµ XOR
 void coder(char *input, char *output, char *key);
 
 void main(int argc, char *argv[]){
