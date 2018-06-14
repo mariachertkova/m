@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int k=0; //счетчик перекладываний
+void hanoi( int n, int begin, int end,int between );
+
+int main(){
+
+    setlocale(LC_ALL,"Russian");
+    
+    hanoi(4, 3 , 2, 1 ); //сколько, c какой, на какую, промежуточная
+    cout<<endl<<"Всего перекладываний : "<<k<<endl;
+    system("pause");
+    return 0;
+    }
+
+void hanoi( int n,int begin,int end,int between ){
+    if (n!=0){//проверяем есть ли кольца
+        k++;
+        hanoi(n-1, begin, between, end); //1 чать алгоритма перекладывания
+        cout<<"Переносим "<<n<<" диск с "<<begin<<" стержня на "<<end<<" стержень"<<endl;
+        hanoi(n-1, between, end, begin); //2 чать алгоритма перекладывания
+    }
+}
