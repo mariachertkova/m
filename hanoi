@@ -18,8 +18,8 @@ int main(){
 void hanoi( int n,int begin,int end,int between ){
     if (n!=0){//проверяем есть ли кольца
         k++;
-        hanoi(n-1, begin, between, end); //1 чать алгоритма перекладывания
+        hanoi(n-1, begin, between, end); //1 часть алгоритма 
         cout<<"Переносим "<<n<<" диск с "<<begin<<" стержня на "<<end<<" стержень"<<endl;
-        hanoi(n-1, between, end, begin); //2 чать алгоритма перекладывания
+        hanoi(n-1, between, end, begin); //2 часть алгоритма
     }
 }
