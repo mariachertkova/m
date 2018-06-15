@@ -10,24 +10,24 @@ using namespace std;
 int main(int argc, char** argv){
 	setlocale(LC_ALL, "Russian");
 	if (argc < 3){
-		cout<<"Çàïóñê: tringle.exe inf.txt outf.txt"<<endl;
+		cout<<"Ã‡Ã Ã¯Ã³Ã±Ãª: tringle.exe inf.txt outf.txt"<<endl;
 		return -1;
 	}
-	const char* inFileName = argv[1]; // Èìÿ âõîäíîãî ôàéëà
-	const char* outFileName = argv[2]; // Èìÿ âûõîäíîãî ôàéëà
+	const char* inFileName = argv[1]; // Ð˜Ð¼Ñ Ð²Ñ…Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð°
+	const char* outFileName = argv[2]; // Ð˜Ð¼Ñ Ð²Ñ‹Ñ…Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð°
 	
 	int pointNum = countPoints(inFileName);
 	if (pointNum < 0){
-		cout<<"Âõîäíîé ôàéë íå ñóùåñòâóåò"<<endl;
+		cout<<"Ð’Ñ…Ð¾Ð´Ð½Ð¾Ð¹ Ñ„Ð°Ð¹Ð» Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚"<<endl;
 		return -2;
 	} else if (pointNum < 4){
-		cout<<"Âõîäíîé ôàéë ñëèøêîì ìàë"<<endl;
+		cout<<"Ð’Ñ…Ð¾Ð´Ð½Ð¾Ð¹ Ñ„Ð°Ð¹Ð» ÑÐ»Ð¸ÑˆÐºÐ¾Ð¼ Ð¼Ð°Ð»"<<endl;
 		return -3;
 	}
 	
 	Point* pointArray = new Point[pointNum];
 		if (!readPoints(inFileName, pointArray, pointNum)){
-		cout<<"Íåèçâåñòíàÿ îøèáêà ïðè ââîäå òî÷åê "<<endl;
+		cout<<"ÐÐµÐ¸ÐµÐ·Ð²ÐµÑÑ‚Ð½Ð°Ñ Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð²Ð²Ð¾Ð´Ðµ Ñ‚Ð¾Ñ‡ÐµÐº"<<endl;
 		return -3;
 	}
 	
@@ -36,11 +36,11 @@ int main(int argc, char** argv){
 	searchLargestTriangles(pointArray, pointNum, trArray, maxTrNum);
 
 	if (!writeTriangles(outFileName, trArray, maxTrNum)){
-		cout<<"Íå óäàëîñü çàïèñàòü ðåçóëüòàò"<<endl;
+		cout<<"ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð·Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚"<<endl;
 		return -4;
 	}
 	
-	cout<<"Ïðîãðàììà óñïåøíî çàâåðøåíà"<<endl;
+	cout<<"ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð°"<<endl;
 	delete[] pointArray;
 	system("pause");
 	return 0;
