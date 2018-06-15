@@ -25,12 +25,12 @@ void searchLargestTriangles(const Point* pointArray, int pointNum, Triangle* trA
 
 	if (maxTrNum <= 0)
 		return;
-	// Î÷èñòêà òðåóãîëüíèêîâ
+	// ÐžÑ‡Ð¸ÑÑ‚ÐºÐ° Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ¾Ð²
 	for (int i=0; i<maxTrNum; i++)
 		clearTriangle(trArray[i]);
 
 	Triangle triangle;
-	// Ïåðåáîð òðîåê òî÷åê
+	// ÐŸÐµÑ€ÐµÐ±Ð¾Ñ€ Ñ‚Ñ€Ð¾ÐµÐº Ñ‚Ð¾Ñ‡ÐµÐº
 	for (int i=0; i<pointNum; i++){
 		triangle.vertexes[0] = pointArray[i];
 		for (int j=i+1; j<pointNum; j++){
