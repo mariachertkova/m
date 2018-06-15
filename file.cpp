@@ -12,7 +12,6 @@ istream& operator >>(istream& in, Point& p){
 	return in;
 }
 
-
 ostream& operator <<(ostream& out, const Point& p){
 	out<<"("<<p.x<<" "<<p.y<<")";
 	return out;
