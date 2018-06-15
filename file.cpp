@@ -7,21 +7,26 @@ using namespace std;
 
 istream& operator >>(istream& in, Point& p){
 	in>>p.x>>p.y;
-	// Ğåçóëüòàòîì äîëæåí áûòü ñàì ïîòîê
-	// İòî ïîçâîëÿåò êîìàíäû òèïà cin>>a>>b>>c
+	// Ğ ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚Ğ¾Ğ¼ Ğ´Ğ¾Ğ»Ğ¶ĞµĞ½ Ğ±Ñ‹Ñ‚ÑŒ ÑĞ°Ğ¼ Ğ¿Ğ¾Ñ‚Ğ¾Ğº
+	// Ğ­Ñ‚Ğ¾ Ğ¿Ğ¾Ğ·Ğ²Ğ¾Ğ»ÑĞµÑ‚ ĞºĞ¾Ğ¼Ğ°Ğ½Ğ´Ñ‹ Ñ‚Ğ¸Ğ¿Ğ° cin>>a>>b>>c
 	return in;
-}
+}
+
 
 ostream& operator <<(ostream& out, const Point& p){
 	out<<"("<<p.x<<" "<<p.y<<")";
 	return out;
-}ostream& operator <<(ostream& out, const Triangle& tr){
+}
+
+ostream& operator <<(ostream& out, const Triangle& tr){
 	out<<"A="<<tr.vertexes[0]<<
 	" B="<<tr.vertexes[1]<<
 	" C="<<tr.vertexes[2]<<
 	" area="<<tr.area;
 	return out;
-}int countPoints(const char* fileName){
+}
+
+int countPoints(const char* fileName){
 	ifstream in(fileName);
 	if (!in.is_open()) return -1;
 	double x,y;
@@ -35,7 +40,7 @@ ostream& operator <<(ostream& out, const Point& p){
 
 bool readPoints(const char* fileName, Point* pointArray, int maxPointNum){
 	 ifstream in(fileName);
-	 // Ôàéë íå îòêğûò
+	 // Ğ¤Ğ°Ğ¹Ğ» Ğ½Ğµ Ğ¾Ñ‚ĞºÑ€Ñ‹Ñ‚
 	 if (!in.is_open())
 		 return 0;
 	 for (int i=0; i<maxPointNum; i++){
