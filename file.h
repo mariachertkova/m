@@ -3,13 +3,13 @@
 
 #include "geometry.h"
 
-// Подсчет числа точек во входном файле
+// РџРѕРґСЃС‡РµС‚ С‡РёСЃР»Р° С‚РѕС‡РµРє РІРѕ РІС…РѕРґРЅРѕРј С„Р°Р№Р»Рµ
 int countPoints(const char* fileName);
 
-// Чтение точек из входного файла
+// Р§С‚РµРЅРёРµ С‚РѕС‡РµРє РёР· РІС…РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р°
 bool readPoints(const char* fileName, Point* pointArray, int maxPointNum);
 
-// Вывод треугольников в выходной файл
+// Р’С‹РІРѕРґ С‚СЂРµСѓРіРѕР»СЊРЅРёРєРѕРІ РІ РІС‹С…РѕРґРЅРѕР№ С„Р°Р№Р»
 bool writeTriangles(const char* fileName, const Triangle* trArray, const int trNum);
 
-#endif
+#endif
