@@ -1,0 +1,17 @@
+//Найти двузначное число, равное утроенному произведению его цифр.
+
+#include <iostream>
+
+using namespace std;
+ 
+int main(){
+	int a, b;
+	for(int i=10; i<=99; i++){
+		a = i / 10;
+		b = i % 10;
+		if (3*a*b == i )
+			cout<<i<<endl;
+	}
+	system("pause");
+  return 0;
+}
