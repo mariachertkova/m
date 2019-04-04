@@ -1,47 +1,25 @@
+
+// Найти все трехзначные числа, представимые в виде сумм факториалов своих цифр.
+
 #include <iostream>
-#include <locale.h>
-#include "file.h"
-#include "search.h"
-#include "geometry.h"
 
 using namespace std;
+ 
+int factorial(int n){
+    if(n<=1)
+      return 1;
+   return n*factorial(n-1);
+}
 
-
-int main(int argc, char** argv){
-	setlocale(LC_ALL, "Russian");
-	if (argc < 3){
-		cout<<"Г‡Г ГЇГіГ±ГЄ: tringle.exe inf.txt outf.txt"<<endl;
-		return -1;
+int main(){
+	for(int i=100;i<=999;i++){
+		int digit1=i%10;     // единицы
+        int digit2=i/10%10; // десятки
+        int digit3=i/100;  // сотни
+        int sum=factorial(digit1)+factorial(digit2)+factorial(digit3);
+        if(sum==i)
+			cout<<i<<endl;
 	}
-	const char* inFileName = argv[1]; // РРјСЏ РІС…РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р°
-	const char* outFileName = argv[2]; // РРјСЏ РІС‹С…РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р°
-	
-	int pointNum = countPoints(inFileName);
-	if (pointNum < 0){
-		cout<<"Р’С…РѕРґРЅРѕР№ С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚"<<endl;
-		return -2;
-	} else if (pointNum < 4){
-		cout<<"Р’С…РѕРґРЅРѕР№ С„Р°Р№Р» СЃР»РёС€РєРѕРј РјР°Р»"<<endl;
-		return -3;
-	}
-	
-	Point* pointArray = new Point[pointNum];
-		if (!readPoints(inFileName, pointArray, pointNum)){
-		cout<<"РќРµРёРµР·РІРµСЃС‚РЅР°СЏ РѕС€РёР±РєР° РїСЂРё РІРІРѕРґРµ С‚РѕС‡РµРє"<<endl;
-		return -3;
-	}
-	
-	const int maxTrNum = 3;
-	Triangle trArray[maxTrNum];
-	searchLargestTriangles(pointArray, pointNum, trArray, maxTrNum);
-
-	if (!writeTriangles(outFileName, trArray, maxTrNum)){
-		cout<<"РќРµ СѓРґР°Р»РѕСЃСЊ Р·Р°РїРёСЃР°С‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚"<<endl;
-		return -4;
-	}
-	
-	cout<<"РџСЂРѕРіСЂР°РјРјР° СѓСЃРїРµС€РЅРѕ Р·Р°РІРµСЂС€РµРЅР°"<<endl;
-	delete[] pointArray;
 	system("pause");
-	return 0;
+    return 0;
 }
