@@ -1,0 +1,22 @@
+//Найти двузначное число, обладающее тем свойством, что куб суммы его цифр равен квадрату самого числа.
+
+#include <iostream>
+
+using namespace std;
+
+int kub(int a, int b){
+	int k=(a+b)*(a+b)*(a+b);
+	return k;
+};
+ 
+int main(){
+	int a, b;
+	for(int i=10; i<=99; i++){
+		a = i / 10;
+		b = i % 10;
+		if (kub(a, b) == i*i )
+			cout<<i<<endl;
+	}
+	system("pause");
+    return 0;
+}
