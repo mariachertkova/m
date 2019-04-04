@@ -1,0 +1,24 @@
+//Можно ли заданное натуральное число М представить в виде суммы квадратов двух натуральных чисел?
+
+#include <iostream>
+using namespace std;
+ 
+int main(){
+	setlocale(LC_ALL, "Russian");
+	double M,sk;
+	cout<<"Введите натуральное число"<<endl;
+	cin >> M;
+  long x,y;
+	sk = sqrt(M);
+	for (x=1; x <= sk; x++){
+		for (y=x; y <= sk; y++){
+			if (x*x+y*y == M){
+				cout<<"Да"<<endl;
+				return 0;
+			}
+		}
+	}
+	cout << "Нет"<<endl;
+	system("pause");
+	return 0;
+}
